@@ -15,4 +15,4 @@ WORKDIR /webapp
 
 COPY . /webapp
 
-RUN npm install && ./node_modules/.bin/grunt build
+RUN npm install
