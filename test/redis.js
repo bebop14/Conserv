@@ -2,6 +2,7 @@
  * Created by naver on 15. 7. 22..
  */
 var	chai = require('chai'),
+		config = require('../config'),
 		redis = require("redis"),
 		expect = chai.expect;
 
@@ -10,7 +11,7 @@ describe("Redis", function () {
 		var client;
 
 		before(function (done) {
-    		client = redis.createClient(6379, "redis");
+    		client = redis.createClient(config.redis.port, config.redis.host);
 
 			client.on("error", function (err) {
 				console.log("Error " + err);

@@ -2,13 +2,14 @@
  * Created by naver on 15. 7. 22..
  */
 var	chai = require('chai'),
+		config = require('../config'),
 		assert = chai.assert,
 		MongoClient = require('mongodb').MongoClient;
 
 describe("MongoDB", function () {
 	describe('insert test', function () {
 		var client, conn,
-				url = 'mongodb://mongo:27017/conserv';
+				url = config.mongodb.url;
 
 		before(function (done) {
 			// Use connect method to connect to the Server
